@@ -30,7 +30,8 @@ class Auto:
             return "Las piezas no son originales"
             
         for asiento in self.asientos:
-            if asiento and asiento.registro != self.registro:
+
+            if isinstance(asiento, Asiento) and asiento.registro != self.registro:
                 return "Las piezas no son originales"
         return "Auto original"
 
